@@ -1,0 +1,212 @@
+-- phpMyAdmin SQL Dump
+-- version 4.7.0
+-- https://www.phpmyadmin.net/
+--
+-- Host: 127.0.0.1
+-- Generation Time: May 30, 2018 at 09:34 PM
+-- Server version: 10.1.25-MariaDB
+-- PHP Version: 5.6.31
+
+SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
+SET AUTOCOMMIT = 0;
+START TRANSACTION;
+SET time_zone = "+00:00";
+
+--
+-- Database: `floris`
+--
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `customer`
+--
+
+CREATE TABLE `customer` (
+  `customer_id` int(255) NOT NULL,
+  `phone_no` varchar(255) NOT NULL,
+  `registration_date` date NOT NULL,
+  `registration_time` varchar(255) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `generics`
+--
+
+CREATE TABLE `generics` (
+  `generic_id` int(255) NOT NULL,
+  `generic_name` varchar(255) NOT NULL,
+  `icd_code` varchar(255) NOT NULL,
+  `prescribed_for` varchar(500) NOT NULL,
+  `its_not_to_be_taken` varchar(500) NOT NULL,
+  `dosage` varchar(500) NOT NULL,
+  `how_it_should_be_taken` varchar(500) NOT NULL,
+  `precautions` varchar(500) NOT NULL,
+  `storage_conditions` varchar(255) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `generics`
+--
+
+INSERT INTO `generics` (`generic_id`, `generic_name`, `icd_code`, `prescribed_for`, `its_not_to_be_taken`, `dosage`, `how_it_should_be_taken`, `precautions`, `storage_conditions`) VALUES
+(1, 'Abacavir', 'Y41.5', 'Abacavir is an antiviral drug that is effective against the HIV-1 virus. It acts on an enzyme of the virus called reverse transcriptase, which plays an important role in its multiplication.', 'Moderate to severe liver disease | Previous allergic reaction.', 'Treatment of HIV-1/AIDS along with other medications. Dose in adults is 600 mg daily, as a single dose or divided into two doses. ', 'It comes as a tablet to take with or without food. It is also available in combination with other anti-HIV drugs.', 'Caution is advised when used in patients with history of depression or at risk for heart disease |  Avoid use with alcohol. | Take along with other anti-HIV drugs and not alone, to prevent resistance. | Continue other precautions to prevent spread of HIV.', 'Store at room temperature (20 degree to 25 degree C).'),
+(2, 'Abciximab', 'Y44.2', 'This medication prevent blood clotting by interfering with clumping of platelets. ', 'Active bleeding | Recent bleeding due to surgery, bleeding from the digestive tract or from other sites, stroke due to a bleed | Allergic reaction.', 'Before procedures on the heart like angioplasty. It is given in a dose of 0.25 mg/kg into the vein 10-60 minutes before the procedure, followed by an infusion of 0.125 &#956;g/kg/min up to a maximum of 10 &#956;g/min for 12 hours . ', 'Injected into the vein by a healthcare provider.', 'Injected into the vein by a healthcare provider. | May cause excess bleeding when administered with other drug with bleeding as side effects. e.g. aspirin, warfarin, t-PA (tissue plasminogen activator) which is used to break clots.', 'Store at 2 degree to 8 degree C. Discard any unused portion left in the vial.'),
+(3, 'Acamprosate', 'Y57.3', 'This medication is an anti-alcoholic agent. It is used to prevent the need for alcohol in people who have stopped drinking alcohol. It reduces the desire to consume alcohol. ', 'Contraindicated to known hypersensitivity and history of severe kidney impairment.', 'The dose depends on patient\'s body weight. The recommended dose is two 333 mg tablets (each dose should total to 666 mg) taken three times daily. ', 'It comes as a tablet to take by mouth, three times per day, with or without meals. ', 'Caution should be exercised in patients with history of kidney disease, severe allergic reactions, patient under treatment with antidepressant, any planned surgery, elderly, children, during pregnancy and breastfeeding.', 'Oral: Store it at room temperature (15-30 degree C), and in an airtight container.'),
+(4, 'Acarbose', 'Y42.3', 'Acarbose prevents the action of certain enzymes in the digestive tract that break down carbohydrates to release glucose, which is subsequently absorbed in the blood. Thus, it controls the rise of blood glucose level after a meal.  ', 'Known allergy to acarbose. | Diabetic ketoacidosis. | Severe liver disease.', 'Type 2 diabetes in a dose of 25 to 100 mg three times a day ', 'Tablet to take by mouth, just before the first bite of each meal. ', 'Use with caution during pregnancy and breastfeeding. ', 'Store it at room temperature in a tight container. Protect from moisture.'),
+(5, 'Acebrophylline', 'not exist', 'Acebrophylline is prescribed for its bronchodilator, mucolytic and anti-inflammatory action. ', 'Allergy to xanthine derivatives and ambroxol | Low blood pressure or heartattack or abnormal heart rhythms', 'The recommended dosage for adults in treating COPD and bronchial asthma is 100 mg twice daily', 'This drug should be taken orally with food to avoid gastric discomfort. ', 'Special precautions should be observed in patients suffering from seizures, cardiac insufficiency and gastro-intestinal disorders. |  Acebrophylline-induced angioedema, a serious allergic reaction, could occur.', 'Store in a cool, dry place. Protect from heat and moisture.'),
+(6, 'Aceclofenac', 'Y45.3', 'This medication is a nonsteroidal anti-inflammatory drug (NSAID), prescribed for fever, pain, ankylosing spondylitis and arthritis. It blocks the action of a substance in the body (cyclo-oxygenase), which may cause pain, swelling and inflammation. ', 'Contraindicated in patients with severe ulcer, gastrointestinal bleeding, and hypersensitivity.', 'Adult- PO- The recommended dose is 100 mg twice daily.', 'It comes as a tablet to take by mouth, with food. ', 'Caution should be exercised in patients with history of Crohn\'s disease, bruising, heart, liver, or kidney disease, gastrointestinal disease, blood clotting problems, systemic lupus erythematosus, elderly, during pregnancy.', 'Store it in an airtight container in a cool dry place. Protect from light.'),
+(7, 'Acenocoumarol', 'Y44.2', 'This medication is an anticoagulant, prescribed for thromboembolic disorders. It inhibits vitamin K reductase, resulting in depletion of the reduced form of vitamin K', 'This medication is not advisable in patients with active bleeding or risk of serious bleeding, severe high blood pressure and pregnancy.', 'Adult: PO- 4-12 mg on the 1st day and 4-8 mg on the 2nd day. Maintenance: 1-8 mg/day as a single dose.', 'It comes as a tablet to take by mouth, with food.', 'Caution should be exercised in patients with history of bleeding disorders, peptic ulcer, severe wounds, allergies, stroke, stomach infections, liver or kidney impairment, elderly, children and breastfeeding.', 'Oral: Store it at room temperature (20-25 degree C) and in an airtight container.');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `invoice`
+--
+
+CREATE TABLE `invoice` (
+  `invoice_id` int(255) NOT NULL,
+  `invoice_no` varchar(255) NOT NULL,
+  `invoice_date` date NOT NULL,
+  `invoice_time` varchar(255) NOT NULL,
+  `cashier` varchar(255) NOT NULL,
+  `cashier_name` varchar(255) NOT NULL,
+  `phone_no` varchar(255) NOT NULL,
+  `medicine_name` varchar(255) NOT NULL,
+  `quantity` varchar(255) NOT NULL,
+  `cgst` varchar(255) NOT NULL,
+  `sgst` varchar(255) NOT NULL,
+  `price` varchar(255) NOT NULL,
+  `total` varchar(255) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `medicines`
+--
+
+CREATE TABLE `medicines` (
+  `medicine_id` int(255) NOT NULL,
+  `medicine_name` varchar(255) NOT NULL,
+  `generic_id` int(255) NOT NULL,
+  `manufacturer` varchar(255) NOT NULL,
+  `category` varchar(255) NOT NULL,
+  `unit` varchar(255) NOT NULL,
+  `type` varchar(255) NOT NULL,
+  `quantity` varchar(255) NOT NULL,
+  `stock` int(255) NOT NULL,
+  `cgst` varchar(255) NOT NULL,
+  `sgst` varchar(255) NOT NULL,
+  `price` varchar(255) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `medicines`
+--
+
+INSERT INTO `medicines` (`medicine_id`, `medicine_name`, `generic_id`, `manufacturer`, `category`, `unit`, `type`, `quantity`, `stock`, `cgst`, `sgst`, `price`) VALUES
+(1, 'Abavir (300mg)', 1, 'Hetero HC (GenX)', 'Antiviral Agents Agents', '300mg', 'Film Coated Tablet', '30', 0, '9.00', '9.00', '1410.29'),
+(2, 'Reopro', 2, 'Eli Lilly and Company (India) Pvt Ltd', '', '2mg/1ml', 'Injection', '5ml', 11, '12.00', '12.00', '19740.12'),
+(3, 'Acamptass (333 mg)', 3, 'Intas Pharmaceuticals Ltd', 'Anti-alcoholic Agent', '333mg', 'Tablet', '6 Tablets', 3, '10.00', '10.00', '58.75'),
+(4, 'Acarex (25 mg)', 4, 'Invision Medi Sciences', 'Antidiabetics', '25mg', 'Tablet', '10Tablet', 40, '9.00', '9.00', '55.99'),
+(5, 'Abacus 50', 4, 'Emcure Pharmaceuticals Ltd.', 'Antidiabetics', '50mg', 'Tablet', '20 Tablets', 40, '10.00', '10.00', '175.25'),
+(6, 'ACEBROLN', 5, 'ELDER', 'Anti- Asthmatics', '100mg', 'capsule', '15 capsules', 3, '12.00', '12.00', '225.30'),
+(7, 'Ostafresh', 6, 'Pharma Drugs & Chemicals', 'Anti- Inflammatory Agents', '100mg', 'Tablet', '5 tablets', 30, '9.00', '9.00', '150.50'),
+(8, 'Acitrom (4 mg)', 7, 'Nicholas Piramal India Ltd.', 'Anticoagulants / Antithrombotics', '4mg', 'Tablet', '5 tablets', 40, '12.00', '12.00', '289.80');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `user`
+--
+
+CREATE TABLE `user` (
+  `user_id` int(255) NOT NULL,
+  `name` varchar(255) NOT NULL,
+  `username` varchar(255) NOT NULL,
+  `password` varchar(255) NOT NULL,
+  `security_qstn` varchar(255) NOT NULL,
+  `security_ans` varchar(255) NOT NULL,
+  `type` varchar(255) NOT NULL,
+  `joining_date` date NOT NULL,
+  `joining_time` varchar(255) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `user`
+--
+
+INSERT INTO `user` (`user_id`, `name`, `username`, `password`, `security_qstn`, `security_ans`, `type`, `joining_date`, `joining_time`) VALUES
+(1, 'Admin', 'admin', '’:{½s%ðißµ\0', '200f24407512574769dddc7b04850a0b', '6351bf9dce654515bf1ddbd6426dfa97', '1', '2018-05-30', '01:02:45am'),
+(2, 'agent', 'agent', '.Á™ñâÞ1Whi¥tˆé­', '200f24407512574769dddc7b04850a0b', '06964dce9addb1c5cb5d6e3d9838f733', '2', '2018-05-30', '01:03:49am');
+
+--
+-- Indexes for dumped tables
+--
+
+--
+-- Indexes for table `customer`
+--
+ALTER TABLE `customer`
+  ADD PRIMARY KEY (`customer_id`),
+  ADD UNIQUE KEY `phone_no` (`phone_no`);
+
+--
+-- Indexes for table `generics`
+--
+ALTER TABLE `generics`
+  ADD PRIMARY KEY (`generic_id`),
+  ADD UNIQUE KEY `generic_name` (`generic_name`);
+
+--
+-- Indexes for table `invoice`
+--
+ALTER TABLE `invoice`
+  ADD PRIMARY KEY (`invoice_id`);
+
+--
+-- Indexes for table `medicines`
+--
+ALTER TABLE `medicines`
+  ADD PRIMARY KEY (`medicine_id`),
+  ADD UNIQUE KEY `medicine_name` (`medicine_name`);
+
+--
+-- Indexes for table `user`
+--
+ALTER TABLE `user`
+  ADD PRIMARY KEY (`user_id`),
+  ADD UNIQUE KEY `username` (`username`);
+
+--
+-- AUTO_INCREMENT for dumped tables
+--
+
+--
+-- AUTO_INCREMENT for table `customer`
+--
+ALTER TABLE `customer`
+  MODIFY `customer_id` int(255) NOT NULL AUTO_INCREMENT;
+--
+-- AUTO_INCREMENT for table `generics`
+--
+ALTER TABLE `generics`
+  MODIFY `generic_id` int(255) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+--
+-- AUTO_INCREMENT for table `invoice`
+--
+ALTER TABLE `invoice`
+  MODIFY `invoice_id` int(255) NOT NULL AUTO_INCREMENT;
+--
+-- AUTO_INCREMENT for table `medicines`
+--
+ALTER TABLE `medicines`
+  MODIFY `medicine_id` int(255) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
+--
+-- AUTO_INCREMENT for table `user`
+--
+ALTER TABLE `user`
+  MODIFY `user_id` int(255) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;COMMIT;
