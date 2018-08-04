@@ -4,6 +4,22 @@ It's an product management and billing system. It have two kind of users i.e. Ad
 -----------------------
 Language - PHP
 
+-----------------------
+
+#Screenshots
+
+Admin Login page
+![alt AdminLogin](Screenshots/admin-login.png)
+
+Admin Signup page
+![alt AdminSignup](Screenshots/admin-signup.png)
+
+Home page
+![alt Home](Screenshots/home.png)
+
+Make Bill page
+![alt BillPage](Screenshots/bill.png)
+
 ---------------------------------
 Database name - floris
 
